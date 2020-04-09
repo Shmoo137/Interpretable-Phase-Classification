@@ -1,5 +1,7 @@
 # Interpretable phase classification
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3746540.svg)](https://doi.org/10.5281/zenodo.3746540)
+
 ## Influence functions for the phase transition between the Luttinger liquid (LL) and the charge density wave (CDW)
 Folder "Influence_Functions_LL-CDW" contains all data and code necessary to reproduce Fig. 2 from the paper "Phase Detection with Neural Networks: Interpreting the Black Box" by A. Dawid, P. Huembeli, M. Tomza, M. Lewenstein, and A. Dauphin, namely:
 - Jupyter notebook `Reproduce_Fig2.ipynb`
