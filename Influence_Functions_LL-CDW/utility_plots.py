@@ -116,4 +116,5 @@ def make_IF_fig2(chosen_test_examples, folder_influence, model_name, formatname 
     IFtext = fig.text(-0.03, 0.5, 'Influence function value', family="serif", va='center', rotation='vertical')
     Utext = fig.text(0.5, -0.01, '$V_1/\,J$ ', family="serif", ha='center')
 
-    fig.savefig('./figures/' + name + '.' + formatname, bbox_extra_artists=(Utext, IFtext), bbox_inches='tight')
+    #fig.savefig('./figures/' + name + '.' + formatname, bbox_extra_artists=(Utext, IFtext), bbox_inches='tight')
+    return fig

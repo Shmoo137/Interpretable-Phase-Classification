@@ -3,7 +3,7 @@ import torch
 from itertools import combinations
 import six
 import collections
-from tqdm import tqdm
+from tqdm import tqdm, trange
 import numpy as np
 
 np.set_printoptions(threshold=10010)
@@ -36,8 +36,7 @@ def find_hessian(loss, model):
     list_length = grad1.size(0)
     hessian = torch.zeros(list_length, list_length)
 
-    for idx in range(list_length):
-            print("{} / {}".format(idx, list_length))
+    for idx in trange(list_length, desc="Calculating hessian"):
             grad2rd = torch.autograd.grad(grad1[idx], model.parameters(), create_graph=True)
             cnt = 0
             for g in grad2rd:
@@ -90,9 +89,6 @@ def append_to_file(list, filename, folder_name = None, delimiter = ' '):
 
 def remove_slash(path):
     return path[:-1] if path[-1] == '/' else path
-
-def create_progressbar(end, desc='', stride=1, start=0):
-    return tqdm(six.moves.range(int(start), int(end), int(stride)), desc=desc, leave=False)
 
 # nD list to 1D list
 def flatten(list):
